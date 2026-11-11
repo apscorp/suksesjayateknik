@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sukses Jaya Teknik | Service Alat Dapur Restoran Cileungsi &amp; Cibubur</title>
 <meta name="description" content="Teknisi service alat dapur restoran dan kafe di Cileungsi, Cibubur dan sekitarnya. Chiller, freezer, cool room, mesin es, kompor, oven, AC. Datang ke lokasi, chat WhatsApp sekarang.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@ nav a{text-decoration:none;color:#D5DCE2}nav a:hover{color:#fff}
 header .btn{min-height:44px;padding:10px 20px;font-size:15px}
 .hero{background:var(--navy);color:var(--cream);overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding-top:72px;padding-bottom:80px}
-.hero h1{color:var(--cream);font-weight:800;font-size:clamp(54px,8.2vw,104px);letter-spacing:-.5px}
+.hero h1{color:var(--cream);font-weight:800;font-size:clamp(46px,8.2vw,104px);letter-spacing:-.5px}
 .hero h1 em{font-style:normal;color:var(--orange)}
 .hero p{font-size:19px;max-width:31em;color:#D9E0E6;margin:24px 0 32px}
 .acts{display:flex;gap:12px;flex-wrap:wrap}
@@ -92,18 +92,61 @@ details p{margin:12px 0 0;max-width:42em}
 footer{background:var(--ink);color:#9FB0BE;font-size:14px;padding:26px 0}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .wa{position:fixed;right:18px;bottom:18px;z-index:30;background:#1FA855;color:#fff;font-weight:600;text-decoration:none;padding:14px 22px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.menu{display:none;background:transparent;border:2px solid #34506a;color:var(--cream);width:48px;height:48px;border-radius:6px;font-size:24px;line-height:1;cursor:pointer}
+.mnav{display:none;border-top:1px solid #1d3347}
+.mnav.open{display:block}
+.mnav a{display:flex;align-items:center;padding:0 24px;min-height:54px;color:var(--cream);text-decoration:none;font-weight:500;border-bottom:1px solid #1d3347}
+@media(max-width:1024px){
+.wrap{padding:0 28px}
+nav{gap:18px}
+.hero .wrap{gap:36px}
+.hero img{height:440px}
+.pain{grid-template-columns:1fr 1fr}
+.panel{grid-template-columns:1fr}
+.gal img{height:280px}
+}
 @media(max-width:900px){
 nav{display:none}
+.menu{display:block}
 .hero .wrap{grid-template-columns:1fr;gap:40px;padding-top:48px;padding-bottom:56px}
-.hero img{height:340px}
+.hero img{height:380px}
 .facts .wrap{grid-template-columns:1fr 1fr}
-.pain,.why,.steps,.gal{grid-template-columns:1fr}
-.panel{grid-template-columns:1fr;padding:26px}
-.gal img{height:260px}
-section{padding:60px 0}
-.steps div{padding-right:0;margin-bottom:24px}
+.why,.steps{grid-template-columns:1fr}
+.steps div{padding-right:0;margin-bottom:20px}
+.gal{grid-template-columns:1fr 1fr}
+.gal figure:first-child{grid-column:1/-1}
+.gal figure:first-child img{height:340px}
+section{padding:64px 0}
 }
-@media(max-width:520px){.panel ul{grid-template-columns:1fr}header .btn{display:none}}
+@media(max-width:600px){
+.wrap{padding:0 18px}
+header .wrap{height:60px}
+.brand{font-size:22px}
+header .btn{display:none}
+.hero .wrap{padding-top:36px;padding-bottom:44px;gap:32px}
+.hero p{font-size:17px;margin:18px 0 24px}
+.hero figure{margin:0 10px 10px 0}
+.hero img{height:280px;box-shadow:10px 10px 0 var(--orange)}
+.acts .btn{width:100%}
+.facts .wrap{gap:18px;padding-top:24px;padding-bottom:24px}
+.facts strong{font-size:22px}
+.pain{grid-template-columns:1fr}
+.tabs{flex-wrap:nowrap;overflow-x:auto;margin-right:-18px;padding-right:18px;padding-bottom:6px}
+.tab{flex:none}
+.panel{padding:22px 18px}
+.panel h3{font-size:32px}
+.panel ul{grid-template-columns:1fr}
+.panel .btn{width:100%}
+.gal{grid-template-columns:1fr}
+.gal img,.gal figure:first-child img{height:240px}
+section{padding:52px 0}
+.lead{font-size:16px;margin-bottom:32px}
+summary{font-size:23px}
+.cta{padding:64px 0}
+.cta .btn{width:100%}
+footer{padding-bottom:88px}
+.wa{right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));padding:13px 18px}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -113,7 +156,9 @@ section{padding:60px 0}
 <a class="brand" href="#">SUKSES JAYA <b>TEKNIK</b></a>
 <nav aria-label="Menu utama"><a href="#masalah">Masalah</a><a href="#layanan">Layanan</a><a href="#cara-kerja">Cara kerja</a><a href="#galeri">Galeri</a><a href="#faq">FAQ</a></nav>
 <a class="btn wa-link" data-msg="Halo Sukses Jaya Teknik, saya ingin konsultasi service alat dapur." href="#" target="_blank" rel="noopener">Chat WhatsApp</a>
+<button class="menu" id="menu" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mnav">&#9776;</button>
 </div>
+<div class="mnav" id="mnav"><a href="#masalah">Masalah</a><a href="#layanan">Layanan</a><a href="#cara-kerja">Cara kerja</a><a href="#galeri">Galeri</a><a href="#faq">FAQ</a><a href="#kontak">Kontak</a></div>
 </header>
 
 <main>
@@ -245,6 +290,9 @@ bind();
 }
 D.forEach(function(x,k){var b=document.createElement('button');b.className='tab';b.type='button';b.setAttribute('role','tab');b.textContent=x.n;b.onclick=function(){show(k)};tabs.appendChild(b)});
 show(0);bind();
+var mb=document.getElementById('menu'),mn=document.getElementById('mnav');
+mb.onclick=function(){var o=mn.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.innerHTML=o?'&#10005;':'&#9776;'};
+mn.onclick=function(e){if(e.target.tagName==='A'){mn.classList.remove('open');mb.setAttribute('aria-expanded',false);mb.innerHTML='&#9776;'}};
 document.getElementById('y').textContent=new Date().getFullYear();
 </script>
 </body>
