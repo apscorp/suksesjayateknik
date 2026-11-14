@@ -249,6 +249,79 @@ footer{padding:34px 0}
 @media(max-width:600px){header .wrap{height:66px}.brand{font-size:22px}.hero .wrap{padding-top:44px;gap:24px}.hero h1{font-size:clamp(52px,14vw,72px)}.hero p{font-size:16px;line-height:1.7}.hero figure{height:245px;margin-right:0}.facts{gap:10px;padding:18px 18px 24px}.facts>div{padding:13px 12px}.facts strong{font-size:20px}.facts span{font-size:12px}.pain,.bento,.gal{grid-template-columns:1fr}.bc{min-height:0}.gal figure:first-child{grid-column:auto}.gal img{height:260px}.why div{padding:27px 24px}.steps div{padding:22px}.cta{padding:72px 0}.cta .num{font-size:54px}.wa{right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}}
 @media(prefers-reduced-motion:reduce){.pain article,.bc,.gal img{transition:none}}
 
+
+/* === MOBILE-FIRST REFINEMENT === */
+img, video, iframe { max-width:100%; }
+html, body { width:100%; }
+body { -webkit-text-size-adjust:100%; }
+button, a { -webkit-tap-highlight-color:transparent; }
+@media (max-width:900px) {
+  header { position:sticky; top:0; }
+  header .wrap { gap:12px; }
+  header .wrap > .btn { display:none; }
+  .menu { flex:0 0 46px; display:grid; place-items:center; }
+  .mnav { max-height:calc(100svh - 66px); overflow-y:auto; overscroll-behavior:contain; }
+  .mnav a { padding:0 22px; min-height:52px; }
+  .hero .wrap { width:100%; }
+  .hero figure { max-width:100%; }
+  .facts { width:100%; }
+  .pain, .bento, .gal, .why, .steps { min-width:0; }
+  .pain article, .bc, .steps div, .why div { min-width:0; }
+}
+@media (max-width:600px) {
+  html { scroll-padding-top:70px; }
+  .wrap { width:100%; padding-left:18px; padding-right:18px; }
+  header .wrap { min-height:64px; height:64px; }
+  .brand { font-size:21px; letter-spacing:.5px; white-space:normal; line-height:1; }
+  .menu { width:44px; height:44px; min-width:44px; font-size:22px; }
+  .mnav a { padding-left:20px; padding-right:20px; font-size:15px; }
+  .hero { overflow:hidden; }
+  .hero .wrap { padding-top:38px; padding-bottom:34px; gap:22px; }
+  .pill { font-size:11px; line-height:1.5; padding:7px 11px; margin-bottom:18px; }
+  .hero h1 { font-size:clamp(46px,13vw,66px); line-height:.96; letter-spacing:-1.2px; overflow-wrap:normal; }
+  .hero p { font-size:15px; line-height:1.7; margin:18px 0 22px; }
+  .acts { display:grid; grid-template-columns:1fr; gap:10px; }
+  .acts .btn { width:100%; min-height:50px; padding:13px 18px; font-size:15px; }
+  .hero figure { width:100%; height:auto; aspect-ratio: 16 / 10; margin:0 8px 8px 0; }
+  .hero img { width:100%; height:100%; object-fit:cover; }
+  .facts { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; padding:16px 18px 22px; }
+  .facts>div { padding:12px 10px; min-width:0; }
+  .facts strong { font-size:19px; }
+  .facts span { display:block; font-size:11px; line-height:1.45; overflow-wrap:anywhere; }
+  .mq span { font-size:18px; padding:0 16px; }
+  section { padding:48px 0; }
+  h2 { font-size:clamp(36px,10vw,48px); line-height:.98; }
+  .lead { font-size:15px; line-height:1.7; margin-bottom:26px; }
+  .pain, .bento, .gal { grid-template-columns:minmax(0,1fr); gap:13px; }
+  .pain article { padding:23px 20px; }
+  .pain .n { font-size:44px; }
+  .bc { padding:22px 19px; min-height:0; }
+  .bc h3 { font-size:27px; }
+  .why div { padding:23px 19px; }
+  .steps div { padding:21px 19px; }
+  .steps b { font-size:68px; }
+  .steps h3 { font-size:26px; }
+  .gal figure:first-child { grid-column:auto; }
+  .gal img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; }
+  summary { font-size:21px; line-height:1.15; }
+  details { padding:18px 0; }
+  details p { font-size:14px; }
+  .cta { padding:58px 0; }
+  .cta p { font-size:16px; }
+  .cta .num { font-size:clamp(42px,12vw,56px); overflow-wrap:anywhere; }
+  .cta .btn { width:100%; }
+  footer .wrap { flex-direction:column; gap:10px; }
+  .wa { right:12px; bottom:calc(12px + env(safe-area-inset-bottom,0px)); padding:12px 16px; font-size:14px; }
+}
+@media (max-width:360px) {
+  .wrap { padding-left:14px; padding-right:14px; }
+  .brand { font-size:19px; }
+  .hero h1 { font-size:45px; }
+  .facts { padding-left:14px; padding-right:14px; }
+  .facts strong { font-size:17px; }
+  .wa { padding:11px 13px; font-size:13px; }
+}
+
 </style>
 </head>
 <body>
